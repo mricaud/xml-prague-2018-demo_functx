@@ -3,7 +3,7 @@
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:xd="http://www.oxygenxml.com/ns/doc/xsl"
-  xmlns:xslLib="http://www.lefebvre-sarrut.eu/ns/lib/xsl"
+  xmlns:myXslLib="http://www.lefebvre-sarrut.eu/ns/lib/xsl"
   xmlns="http://www.w3.org/1999/xhtml"
   xpath-default-namespace="http://www.w3.org/1999/xhtml"
   exclude-result-prefixes="#all"
@@ -25,11 +25,11 @@
         <xsl:apply-imports/>
       </xsl:document>
     </xsl:variable>
-    <xsl:apply-templates select="$step" mode="xslLib:xspec.adapt.xhtml-output"/>
+    <xsl:apply-templates select="$step" mode="myXslLib:xspec.adapt.xhtml-output"/>
   </xsl:template>
   
   <!--The default (x)html output add an encoding meta in the head element-->
-  <xsl:template match="html/head" mode="xslLib:xspec.adapt.xhtml-output">
+  <xsl:template match="html/head" mode="myXslLib:xspec.adapt.xhtml-output">
     <xsl:message>[XSPEC] Simulate html serialisation : adding meta charset </xsl:message>
     <xsl:copy copy-namespaces="no">
       <xsl:copy-of select="@*"/>
@@ -38,7 +38,7 @@
     </xsl:copy>
   </xsl:template>
   
-  <xsl:template match="node() | @*" mode="xslLib:xspec.adapt.xhtml-output">
+  <xsl:template match="node() | @*" mode="myXslLib:xspec.adapt.xhtml-output">
     <xsl:copy>
       <xsl:apply-templates select="node() | @*" mode="#current"/>
     </xsl:copy>
