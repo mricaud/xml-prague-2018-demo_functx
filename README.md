@@ -1,4 +1,5 @@
-# XML Prague 2018 : Using Maven with XML projects - Demo "myLib"
+# XML Prague 2018
+## Using Maven with XML projects - Demo "myLib"
 
 This repo holds "myLib" source, please see the main project at: 
 https://github.com/mricaud/xml-prague-2018-demo_myXMLproject
@@ -15,7 +16,7 @@ Build with Maven:
 
 This will generate a jar : myXslLib-1.0.jar into target and your .m2 directory.
 
-Now any maven having a dependency to:
+Now any maven project having a dependency to:
 ```xml
 <dependency>
   <groupId>eu.els.lib</groupId>
@@ -23,4 +24,4 @@ Now any maven having a dependency to:
   <version>1.0</version>
 </dependency>
 ```
-Will be able to access it (localy)
+Will be able to access it (localy at least, the build can also be run by jenkins to store it in a shared maven repository like Nexus or Maven Central)
